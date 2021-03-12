@@ -1,1 +1,2 @@
-export * from './getCompetition';
+export * from './getTeams';
+export * from './getMatches';

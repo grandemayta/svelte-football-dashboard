@@ -1,10 +1,11 @@
 <script type="ts">
   import { getMatches } from "../services/getMatches";
 
-  export let competition: string;
+  export let code: string;
+  export let currentMatchday: number;
 </script>
 
-{#await getMatches(competition, '2021-03-12', '2021-07-22')}
+{#await getMatches(code, currentMatchday)}
   <p>Loading...</p>
 {:then { matches }}
   <table class="table is-hoverable is-fullwidth">

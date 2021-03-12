@@ -1,8 +1,8 @@
 import { httpWrapper } from "../core";
 import { ResponseMatches } from "../models";
 
-export const getMatches = async (competition: string, dateFrom: string, dateTo: string): Promise<ResponseMatches> => {
-  const response = await httpWrapper(`competitions/${competition}/matches?limit=1&dateFrom=${dateFrom}&dateTo=${dateTo}`);
+export const getMatches = async (code: string, currentMatchday: number): Promise<ResponseMatches> => {
+  const response = await httpWrapper(`competitions/${code}/matches?currentMatchday=${currentMatchday}`);
 
   if (!response.ok) {
     return Promise.reject();

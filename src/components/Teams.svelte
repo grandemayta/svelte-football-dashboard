@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getCompetition } from "../services";
-  export let competition: string;
+  import { getTeams } from "../services";
+  export let code: string;
 </script>
 <style>
     img {
@@ -8,7 +8,7 @@
     }
 </style>
 
-{#await getCompetition(competition)}
+{#await getTeams(code)}
     <p>Loading...</p>
 {:then { teams }}
     <nav class="level py-4">

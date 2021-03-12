@@ -1,7 +1,10 @@
-import { Competition } from "./competition";
-import { Team } from "./team";
+import { Area } from "./area";
+import { CurrentSeason } from "./current-season";
 
 export interface ResponseCompetition {
-    teams: Array<Team>;
-    competition: Competition
+  id: number;
+  area: Area;
+  code: string;
+  name: string;
+  currentSeason: CurrentSeason;
 }
