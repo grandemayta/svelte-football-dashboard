@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { getCompetition } from "../services/getCompetition";
+  import { getCompetition } from "../services";
   import Hero from "./Hero.svelte";
   import Matches from "./Matches.svelte";
+import Standings from "./Standings.svelte";
   import Teams from "./Teams.svelte";
 
   export let competitionId: number;
@@ -14,6 +15,7 @@
   <div class="container">
     <Teams {code} />
     <Matches {code} {currentMatchday} />
+    <Standings {code} />
   </div>
 {:catch error}
   <p>Opss something is not working!</p>
