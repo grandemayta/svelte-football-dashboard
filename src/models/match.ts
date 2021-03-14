@@ -1,3 +1,4 @@
+import { Score } from "./score";
 import { Season } from "./season";
 import { Team } from "./team";
 
@@ -9,4 +10,5 @@ export interface Match {
     matchday: number;
     homeTeam: Team;
     awayTeam: Team;
+    score: Score;
 }

@@ -2,7 +2,7 @@
   import { getCompetition } from "../services";
   import Hero from "./Hero.svelte";
   import Matches from "./Matches.svelte";
-import Standings from "./Standings.svelte";
+  import Standings from "./Standings.svelte";
   import Teams from "./Teams.svelte";
 
   export let competitionId: number;

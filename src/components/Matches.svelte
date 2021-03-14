@@ -9,10 +9,14 @@
   <p>Loading...</p>
 {:then { matches }}
   <table class="table is-hoverable is-fullwidth">
-    {#each matches as { homeTeam, awayTeam, matchday }}
+    {#each matches as { homeTeam, awayTeam, status, score }}
       <tr>
         <td>{homeTeam.name}</td>
-        <td>vs</td>
+        {#if status === 'FINISHED'}
+          <td>{score.fullTime.homeTeam} vs {score.fullTime.awayTeam}</td>
+        {:else}
+          <td>vs</td>
+        {/if}
         <td>{awayTeam.name}</td>
       </tr>
     {/each}
