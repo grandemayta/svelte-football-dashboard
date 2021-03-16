@@ -11,7 +11,7 @@
 {#await getTeams(code)}
   <p>Loading...</p>
 {:then { teams }}
-  <nav class="level py-4">
+  <nav class="level py-4 has-text-centered">
     {#each teams as { crestUrl, name }}
       <img src={crestUrl} alt={name} />
     {/each}
