@@ -8,13 +8,13 @@
 <Header />
 
 <FootballSection competitionId={2019} competitionCode="SA" theme="is-link" />
-<Lazy height={400}>
+<Lazy height={800}>
   <FootballSection competitionId={2014} competitionCode="PD" theme="is-success" />
 </Lazy>
-<Lazy height={400}>
-  <FootballSection competitionId={2021} competitionCode="PD" theme="is-info" />
+<Lazy height={800}>
+  <FootballSection competitionId={2021} competitionCode="PL" theme="is-info" />
 </Lazy>
-<Lazy height={400}>
+<Lazy height={800}>
   <FootballSection competitionId={2002} competitionCode="BL1" theme="is-danger" />
 </Lazy>
 
