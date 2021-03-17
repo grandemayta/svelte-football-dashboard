@@ -1,4 +1,4 @@
-export interface Season {
+interface Season {
     id: number;
     startDate: string;
     endDate: string;

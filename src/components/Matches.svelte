@@ -3,17 +3,8 @@
   import { getMatches } from "../services/getMatches";
   export let code: string;
   export let currentMatchday: number;
+  export let teamsByKey: TeamWithKey;
 </script>
-<style lang="scss">
-@media screen and (max-width: 768px) {
-  table {
-    td {
-      text-align: center;
-      font-size: 14px;
-    }
-  }
-}
-</style>
 
 {#await getMatches(code, currentMatchday)}
   <p>Loading...</p>
@@ -23,7 +14,7 @@
     {#each matches as { homeTeam, awayTeam, status, score, utcDate }}
       <tr>
         <td class="is-hidden-mobile">{dateFormat(utcDate, 'dd/mm - H:MM ')}</td>
-        <td>{homeTeam.name}</td>
+        <td class="has-text-centered">{teamsByKey[homeTeam.id].shortName}</td>
         <td class="has-text-centered" style="width: 80px;">
           {#if status === 'FINISHED'}
             {score.fullTime.homeTeam}-{score.fullTime.awayTeam}
@@ -31,7 +22,7 @@
             vs
           {/if}
         </td>
-        <td>{awayTeam.name}</td>
+        <td class="has-text-centered">{teamsByKey[awayTeam.id].shortName}</td>
       </tr>
     {/each}
   </table>

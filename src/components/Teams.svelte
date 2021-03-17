@@ -1,21 +1,15 @@
 <script lang="ts">
-  import { getTeams } from "../services";
-  export let code: string;
+  export let teams: Array<Team>;
 </script>
 <style>
-    img {
-      width: 40px;
-    }
+  img {
+    width: 40px;
+  }
 </style>
 
-{#await getTeams(code)}
-  <p>Loading...</p>
-{:then { teams }}
-  <nav class="level py-4 has-text-centered">
-    {#each teams as { crestUrl, name }}
-      <img src={crestUrl} alt={name} />
-    {/each}
-  </nav>
-{:catch error}
-  <p>Oopss something is not working</p>
-{/await}
+<nav class="level py-4 has-text-centered">
+  {#each teams as { crestUrl, name }}
+    <img src={crestUrl} alt={name} />
+  {/each}
+</nav>
+

@@ -1,5 +1,4 @@
 import { httpWrapper } from "../core";
-import { ResponseStandings } from "../models";
 
 export const getStandings = async (code: string): Promise<ResponseStandings> => {
   const response = await httpWrapper(`competitions/${code}/standings?standingType=TOTAL`);

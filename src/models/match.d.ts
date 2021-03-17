@@ -1,8 +1,4 @@
-import { Score } from "./score";
-import { Season } from "./season";
-import { Team } from "./team";
-
-export interface Match {
+interface Match {
     id: number;
     season: Season;
     utcDate: Date;

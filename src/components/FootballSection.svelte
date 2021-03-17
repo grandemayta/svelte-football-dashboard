@@ -1,11 +1,13 @@
 <script lang="ts">
-  import { getCompetition } from "../services";
+  import { getCompetitionAndTeams } from "../services";
   import Hero from "./Hero.svelte";
   import Matches from "./Matches.svelte";
   import Scorers from "./Scorers.svelte";
   import Standings from "./Standings.svelte";
   import Teams from "./Teams.svelte";
   export let competitionId: number;
+  export let competitionCode: string;
+  export let theme: string;
 </script>
 <style>
   @media screen and (max-width: 768px) {
@@ -16,17 +18,17 @@
   }
 </style>
 
-{#await getCompetition(competitionId)}
-  <p>Loading...</p>
-{:then { name, area, code, currentSeason: { currentMatchday } }}
-  <Hero title={name} subtitle={area.name} color="is-link" />
+{#await getCompetitionAndTeams(competitionId, competitionCode)}
+  <div style="height: 800px"></div>
+{:then { name, area, code, teams, teamsByKey, currentSeason }}
+  <Hero title={name} subtitle={area.name} {theme} />
   <div class="container mt-5">
     <div class="columns">
       <div class="column">
         <div class="card">
           <div class="card-content">
             <div class="content">
-              <Teams {code} />
+              <Teams {teams} />
             </div>
           </div>
         </div>
@@ -37,7 +39,7 @@
         <div class="card">
           <div class="card-content">
             <div class="content">
-              <Standings {code} />
+              <Standings {code} {teamsByKey} />
             </div>
           </div>
         </div>
@@ -48,7 +50,7 @@
         <div class="card">
           <div class="card-content">
             <div class="content">
-              <Matches {code} {currentMatchday} />
+             <Matches {code} currentMatchday={currentSeason.currentMatchday} {teamsByKey} />
             </div>
           </div>
         </div>
@@ -57,7 +59,7 @@
         <div class="card">
           <div class="card-content">
             <div class="content">
-              <Scorers {code} />
+              <Scorers {code} {teamsByKey} />
             </div>
           </div>
         </div>

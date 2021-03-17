@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getScorers } from "../services";
-  
   export let code: string;
+  export let teamsByKey: TeamWithKey;
 </script>
 
 {#await getScorers(code)}
@@ -12,7 +12,14 @@
     {#each scorers as { player, team, numberOfGoals }}
     <tr>
       <td>{player.name}</td>
-      <td>{team.name}</td>
+      <td style="width: 24px;">
+        <p class="image is-24x24">
+          <img src={teamsByKey[team.id].crestUrl} alt={team.name} />
+        </p>
+      </td>
+      <td class="pl-0">
+        {teamsByKey[team.id].shortName}
+      </td>
       <td>{numberOfGoals}</td>
     </tr>
     {/each}

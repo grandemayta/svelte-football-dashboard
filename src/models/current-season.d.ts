@@ -1,4 +1,4 @@
-export interface CurrentSeason {
+interface CurrentSeason {
   startDate: string;
   endDate: string;
   currentMatchday: number;

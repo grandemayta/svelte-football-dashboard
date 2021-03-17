@@ -1,4 +1,4 @@
-export interface Team {
+interface Team {
     id: number;
     name: string;
     shortName: string;
@@ -10,4 +10,8 @@ export interface Team {
     founded: number;
     clubColors: string;
     venue: string;
+}
+
+interface TeamWithKey {
+  [key: string]: Team;
 }

@@ -1,5 +1,4 @@
 import { httpWrapper } from "../core";
-import { ResponseMatches } from "../models";
 
 export const getMatches = async (code: string, currentMatchday: number): Promise<ResponseMatches> => {
   const response = await httpWrapper(`competitions/${code}/matches?matchday=${currentMatchday}`);

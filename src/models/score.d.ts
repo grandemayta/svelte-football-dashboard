@@ -1,4 +1,4 @@
-export interface Score {
+interface Score {
   winner: string,
   fullTime: {
     homeTeam: number;

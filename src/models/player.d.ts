@@ -1,4 +1,4 @@
-export interface Player {
+interface Player {
     id: number;
     name: string;
     firstName: string;

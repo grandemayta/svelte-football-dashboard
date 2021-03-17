@@ -1,6 +1,4 @@
-import { Team } from './team';
-
-export interface Standing {
+interface Standing {
     position: number;
     team: Team
     playedGames: number;
