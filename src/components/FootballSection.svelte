@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getCompetitionAndTeams } from "../services";
+  import Error from "./Error.svelte";
   import Hero from "./Hero.svelte";
   import Matches from "./Matches.svelte";
   import Scorers from "./Scorers.svelte";
@@ -67,5 +68,5 @@
     </div>
   </div>
 {:catch error}
-  <p>We reached the limit usage <strong>(10req/sec)</strong></p>
+  <Error />
 {/await}

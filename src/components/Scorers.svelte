@@ -9,9 +9,7 @@
   }
 </style>
 
-{#await getScorers(code)}
-  <p>Loading...</p>
-{:then { scorers }}
+{#await getScorers(code) then { scorers }}
   <h5 class="title is-5 is-uppercase mt-4">Top Scorers</h5>
   <table class="table is-fullwidth">
     {#each scorers as { player, team, numberOfGoals }}
@@ -29,6 +27,4 @@
     </tr>
     {/each}
   </table>
-{:catch error}
-  <p>Opss something is not working!</p>
 {/await}
