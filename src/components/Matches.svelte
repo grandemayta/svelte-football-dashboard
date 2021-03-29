@@ -11,9 +11,7 @@
   }
 </style>
 
-{#await getMatches(code, currentMatchday)}
-  <p>Loading...</p>
-{:then { matches }}
+{#await getMatches(code, currentMatchday) then { matches }}
   <h5 class="title is-5 is-uppercase mt-4">Next Matches</h5>
   <table class="table is-fullwidth">
     {#each matches as { homeTeam, awayTeam, status, score, utcDate }}
@@ -31,6 +29,4 @@
       </tr>
     {/each}
   </table>
-{:catch error}
-  <p>Oopss something is not working!</p>
 {/await}

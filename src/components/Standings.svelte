@@ -9,9 +9,8 @@
     vertical-align: middle;
   }
 </style>
-{#await getStandings(code)}
-  <p>Loading...</p>
-{:then { standings }}
+
+{#await getStandings(code) then { standings }}
   <table class="table is-fullwidth is-striped">
     <thead>
       <tr>
@@ -69,6 +68,4 @@
       {/each}
     </tbody>
   </table>
-{:catch error}
-  <p>Oopss something is not working</p>
-{/await}
+  {/await}
