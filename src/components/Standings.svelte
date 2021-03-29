@@ -6,6 +6,7 @@
 <style>
   .table td, .table th {
     border: none;
+    vertical-align: middle;
   }
 </style>
 {#await getStandings(code)}

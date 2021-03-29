@@ -5,6 +5,11 @@
   export let currentMatchday: number;
   export let teamsByKey: TeamWithKey;
 </script>
+<style>
+  .table td {
+    vertical-align: middle;
+  }
+</style>
 
 {#await getMatches(code, currentMatchday)}
   <p>Loading...</p>
