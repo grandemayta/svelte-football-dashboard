@@ -3,6 +3,11 @@
   export let code: string;
   export let teamsByKey: TeamWithKey;
 </script>
+<style>
+  .table td {
+    vertical-align: middle;
+  }
+</style>
 
 {#await getScorers(code)}
   <p>Loading...</p>

@@ -1,4 +1,4 @@
 export * from './getMatches';
 export * from './getStandings';
 export * from './getScorers';
-export * from './getCompetitionAndTeams';
+export * from './getTeams';

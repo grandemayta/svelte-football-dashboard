@@ -1,6 +1,6 @@
 import { httpWrapper } from "../core";
 
-export const getCompetitionAndTeams = async (competitionId: number, competitioCode: string): Promise<CompetitionAndTeams> => {
+export const getCompetitionAndTeams = async (competitionId: string, competitioCode: string): Promise<CompetitionAndTeams> => {
     const responses = await Promise.all([
       httpWrapper(`competitions/${competitionId}`),
       httpWrapper(`competitions/${competitioCode}/teams`)

@@ -5,7 +5,7 @@
   import Scorers from "./Scorers.svelte";
   import Standings from "./Standings.svelte";
   import Teams from "./Teams.svelte";
-  export let competitionId: number;
+  export let competitionId: string;
   export let competitionCode: string;
   export let theme: string;
 </script>
@@ -22,7 +22,7 @@
   <div style="height: 800px"></div>
 {:then { name, area, code, teams, teamsByKey, currentSeason }}
   <Hero title={name} subtitle={area.name} {theme} />
-  <div class="container mt-5">
+  <div class="container mt-5 mb-5">
     <div class="columns">
       <div class="column">
         <div class="card">
@@ -67,5 +67,5 @@
     </div>
   </div>
 {:catch error}
-  <p>Opss something is not working!</p>
+  <p>We reached the limit usage <strong>(10req/sec)</strong></p>
 {/await}
